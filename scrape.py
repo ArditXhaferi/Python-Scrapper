@@ -85,7 +85,7 @@ import json
 
 # print(dataObject)
 dataObject = {}
-sites = ["Kosovapress", "Telegrafi", "GazetaExpress", "Koha", "Indeksonline", "BotaSot", "Reporteri"]
+sites = ["Kosovapress", "Telegrafi", "GazetaExpress", "Koha", "Indeksonline", "BotaSot", "Reporteri", "Insajderi"]
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -107,7 +107,7 @@ def scrape_site(click, url, element, link_dom, text_dom, site, button):
         soup = BeautifulSoup(r.content, 'html.parser')
 
     linksArray = []
-    keywordsArray = ["pdk"]
+    keywordsArray = ["pdk", "vv", "ldk", "nisma"]
     keywordsCount = {}
     for keyword in keywordsArray:
         dataObject[site][keyword] = {}
@@ -147,5 +147,8 @@ scrape_site(bool(0), 'https://www.koha.net/tag/zgjedhjet-2021/', "div", "row cle
 scrape_site(bool(1), 'https://indeksonline.net/zgjedhjet/', "li", "box_style_paginated", "article-content", "Indeksonline", "loadmore-inf")
 scrape_site(bool(0), 'https://www.botasot.info/lajme/', "div", "related-down", "main-paragraph", "BotaSot", "")
 scrape_site(bool(0), 'https://reporteri.net/zgjedhjet2021/', "div", "td-module-thumb", "td-post-content", "Reporteri", "")
+scrape_site(bool(0), 'https://insajderi.com/lajme/', "div", "lajme_c", "text-holder", "Insajderi", "")
 
+with open('data.json', 'w') as outfile:
+    json.dump(dataObject, outfile)
 print(dataObject)
