@@ -220,9 +220,9 @@ a.main-button-slider {
   font-size: 13px;
   border-radius: 20px;
   padding: 12px 20px;
-  background-color: #f55858;
+  background-color: white;
   text-transform: uppercase;
-  color: #fff;
+  color: #ed27ff;
   letter-spacing: 0.25px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -232,6 +232,7 @@ a.main-button-slider {
 
 a.main-button-slider:hover {
   background-color: #0088e8;
+  color: white;
 }
 
 a.main-button {
@@ -292,6 +293,33 @@ button.main-button:hover {
 header
 --------------------------------------------- 
 */
+
+.people{
+  margin-bottom: 1rem;
+  display: inline !important;
+  width: auto !important;
+  height: 200px;
+  filter: grayscale(100%);
+  transition: 1s ease;
+}
+
+.owl-item:hover .people{
+  filter: grayscale(0%);
+  transition: 1s ease;
+}
+
+.owl-item:hover .count{
+  font-size: 50px !important;
+  transition: .3s ease;
+}
+
+.count{
+  font-weight: 800 !important;
+  font-size: 40px !important;
+  margin-top: 1rem;
+  margin-bottom: none !important;
+  transition: .3s ease;
+}
 
 .background-header {
   background-color: #fff;
@@ -855,7 +883,7 @@ about
 }
 
 #about .right-text p {
-  margin-bottom: 40px;
+  margin: 20px 0px 40px 0px;
 }
 
 #about2 {
@@ -908,7 +936,7 @@ services
 */
 #services {
   position: relative;
-  padding: 120px 0px 90px 0px;
+  padding: 80px 0px 90px 0px;
   background: rgba(0, 136, 232, 1);
   background: -moz-linear-gradient(
     -45deg,
@@ -955,7 +983,7 @@ services
   display: block;
   background: #ffffff;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
+  padding: 20px 30px 40px 30px;
   text-align: center;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -1004,12 +1032,21 @@ services
 
 .service-item .service-title {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 30px;
   color: #1e1e1e;
   letter-spacing: 0.7px;
   margin-bottom: 15px;
   position: relative;
   z-index: 2;
+}
+
+.service-main-title{
+  text-align: center;
+  margin-bottom: 80px;
+  font-weight: 600;
+  font-size: 50px;
+  margin-bottom: 80px;
+  color: #fff;
 }
 
 .service-item p {
@@ -1095,7 +1132,7 @@ accordions
 */
 
 #frequently-question {
-  padding: 120px 0px;
+  padding: 80px 0px;
 }
 
 #frequently-question .section-heading p {

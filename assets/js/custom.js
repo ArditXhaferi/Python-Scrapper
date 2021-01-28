@@ -2,7 +2,6 @@
   "use strict";
 
   $(".owl-carousel").owlCarousel({
-    loop: true,
     margin: 30,
     nav: true,
     pagination: true,
