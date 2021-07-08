@@ -29,7 +29,7 @@
         <div class="content-menu">
             <ul>
                 <li class="scroll-to-link" data-target="get-characters">
-                    <a>Get Characters</a>
+                    <a>Get The Results</a>
                 </li>
             </ul>
         </div>
@@ -39,18 +39,37 @@
         <div class="content">
 
             <div class="overflow-hidden content-section" id="content-get-characters">
-                <h2 id="get-characters">get characters</h2>
+                <h2 id="get-characters">Get The Results</h2>
                 <pre><code class="bash">
 # Here is a curl example
 curl \
--X POST http://votajote.cf/data.json
+-X POST http://votajote.ga/data.json
     </code></pre>
                 <p>
-                    To get characters you need to make a POST call to the following url :<br>
-                    <code class="higlighted">http://api.westeros.com/character/get</code>
+                    To get scrapped data you need to make a POST call to the following url :<br>
+                    <code class="higlighted">http://votajote.ga/data.json</code>
                 </p>
                 <br>
                 <pre><code class="json">
+Structure Example:
+{
+    "parties": {
+      "sites": {
+        "keywoard": {
+          "link": 'number of mentions',
+        },
+      }
+    },
+    "people": {
+      "sites": {
+        "keywoard": {
+          "link": 'number of mentions',
+        },
+      }
+    }
+  }
+
+
 Result example :
 
 {
@@ -119,7 +138,7 @@ Result example :
     }
   }
                 </code></pre>
-                <h4>QUERY PARAMETERS</h4>
+                <h4>RESULT DATA STRUCTURE</h4>
                 <table>
                     <thead>
                         <tr>
@@ -130,49 +149,29 @@ Result example :
                     </thead>
                     <tbody>
                         <tr>
-                            <td>secret_key</td>
-                            <td>String</td>
-                            <td>Your API key.</td>
+                            <td>parties</td>
+                            <td>array</td>
+                            <td>The scrapped data for the political parties.</td>
                         </tr>
                         <tr>
-                            <td>search</td>
-                            <td>String</td>
-                            <td>(optional) A search word to find character by name.</td>
+                            <td>people</td>
+                            <td>array</td>
+                            <td>The scrapped data for the political figuer.</td>
                         </tr>
                         <tr>
-                            <td>house</td>
-                            <td>String</td>
-                            <td>
-                                (optional) a string array of houses:
-                            </td>
+                            <td>sites</td>
+                            <td>array</td>
+                            <td>Inside parties or people you will find the sites we scrapped</td>
                         </tr>
                         <tr>
-                            <td>alive</td>
-                            <td>Boolean</td>
-                            <td>
-                                (optional) a boolean to filter alived characters
-                            </td>
+                            <td>keywoard</td>
+                            <td>array</td>
+                            <td>inside the sites you will find the keywords we use to scrape the sites</td>
                         </tr>
                         <tr>
-                            <td>gender</td>
-                            <td>String</td>
-                            <td>
-                                (optional) a string to filter character by gender:<br>
-                                m: male<br>
-                                f: female
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>offset</td>
-                            <td>Integer</td>
-                            <td>(optional - default: 0) A cursor for use in pagination. Pagination starts offset the
-                                specified offset.</td>
-                        </tr>
-                        <tr>
-                            <td>limit</td>
-                            <td>Integer</td>
-                            <td>(optional - default: 10) A limit on the number of objects to be returned, between 1 and
-                                100.</td>
+                            <td>link</td>
+                            <td>string</td>
+                            <td>and finally inside the keywoard you will find links with values appropriate to the number of times the keyword was mentioned</td>
                         </tr>
                     </tbody>
                 </table>
