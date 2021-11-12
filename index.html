@@ -259,6 +259,18 @@
                 <h1 class="service-main-title" data-scroll-reveal="enter top move 30px over 0.6s after 0.4s">Politikanët Më Të Përfolur</h1>
                 <div class="owl-carousel owl-theme">
                     <div class="item service-item" data-scroll-reveal="enter top move 541px over 0.6s after .1s">
+                        <img src="assets/images/perparim.png" class="people">
+                        <h5 class="service-title">Përparim Rama</h5>
+                        <p>Përparim Rama është arkitekt dhe urbanist shqiptar nga Kosova. Puna e tij është botuar në London Building Design Magazine dhe disa revista të tjera ndërkombëtare të dizajnit.</p>
+                        <h5 class="count" id="përparim">0</h5><p>i/e përmendur</p>
+                    </div>
+                    <div class="item service-item" data-scroll-reveal="enter top move 541px over 0.6s after .1s">
+                        <img src="assets/images/arben.png" class="people">
+                        <h5 class="service-title">Arben Vitia</h5>
+                        <p>Arben Vitia u lind me 24 dhjetor 1973, në Prishtinë. Ai diplomoi në Qendrën Spitalore Universitare në Tiranë, drejtimi Mjekësi e Përgjithshme.</p>
+                        <h5 class="count" id="arben">0</h5><p>i/e përmendur</p>
+                    </div>
+                    <div class="item service-item" data-scroll-reveal="enter top move 541px over 0.6s after .1s">
                         <img src="assets/images/alb.png" class="people">
                         <h5 class="service-title">Albin Kurti</h5>
                         <p>Albin Kurti është një politikan dhe aktivist i Kosovës që shërbeu si Kryeministri i katërt i Kosovës nga 3 Shkurt 2020 deri më 3 Qershor 2020. Kurti është gjithashtu udhëheqësi i lëvizjes politike dhe partisë Vetëvendosje.</p>
@@ -485,7 +497,7 @@
                     poepleData[dataKey][dataNestedKey] = all
                 });
             });
-            let peopleArray = ["kurti", "kadri", "vjosa", "glauk", "ramush", "behgjet", "dardan", "fatmir"]
+            let peopleArray = ["përparim", "arben", "kurti", "kadri", "vjosa", "glauk", "ramush", "behgjet", "dardan", "fatmir"]
             let peopleCount = {}
             peopleArray.forEach(people => {
                 peopleCount[people] = 0;
@@ -497,6 +509,7 @@
                     peopleCount[dataNestedKey] += poepleData[dataKey][dataNestedKey]
                 });
             });
+            console.log(peopleCount);
             peopleArray.forEach(people => {
                 $('#' + people).text(peopleCount[people]);
                 $('#' + people).counterUp();

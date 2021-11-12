@@ -4,9 +4,6 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
 import json
-from apscheduler.schedulers.blocking import BlockingScheduler
-import logging
-logging.basicConfig()
 
 dataObject = {}
 peopleObject = {}
@@ -34,7 +31,7 @@ def scrape_site(click, url, element, link_dom, text_dom, site, button):
 
     linksArray = []
     keywordsArray = ["pdk", "vv", "ldk", "nisma", "aak", "akr", "psd"]
-    peopleArray = ["kurti", "kadri", "vjosa", "glauk", "ramush", "behgjet", "dardan", "fatmir"]
+    peopleArray = ["përparim", "arben", "kurti", "kadri", "vjosa", "glauk", "ramush", "behgjet", "dardan", "fatmir"]
     peopleCount = {}
     for keyword in keywordsArray:
         dataObject[site][keyword] = {}
